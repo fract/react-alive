@@ -1,0 +1,1 @@
+export { Alive } from './alive'

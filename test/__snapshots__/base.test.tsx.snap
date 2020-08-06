@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initial render with null 1`] = `null`;
+
+exports[`render with <div>Barry</div> 1`] = `
+<div>
+  Barry
+</div>
+`;
+
+exports[`render with <div>John</div> 1`] = `
+<div>
+  John
+</div>
+`;

@@ -1,0 +1,49 @@
+{
+    "name": "@fract/react-alive",
+    "description": "React component to live connect a fractal application",
+    "version": "0.1.0",
+    "author": "Denis Churbanov",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fract/react-alive.git"
+    },
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "typings": "dist/index.d.ts",
+    "scripts": {
+        "start": "rollup -c -w",
+        "build": "rollup -c",
+        "test": "jest",
+        "test:coverage": "jest --coverage",
+        "test:uncache": "jest --clearCache",
+        "prepublishOnly": "npm run build"
+    },
+    "peerDependencies": {
+        "react": "^16.0.0",
+        "@fract/core": "^0.1.2"
+    },
+    "devDependencies": {
+        "@fract/core": "^0.1.2",
+        "@rollup/plugin-commonjs": "^13.0.0",
+        "@rollup/plugin-node-resolve": "^8.1.0",
+        "@types/jest": "^26.0.4",
+        "@types/react": "^16.0.0",
+        "@types/react-test-renderer": "^16.9.3",
+        "husky": "^4.2.5",
+        "jest": "^26.1.0",
+        "prettier": "^2.0.5",
+        "react": "^16.0.0",
+        "react-test-renderer": "^16.13.1",
+        "rollup": "^2.21.0",
+        "rollup-plugin-auto-external": "^2.0.0",
+        "rollup-plugin-delete": "^2.0.0",
+        "rollup-plugin-typescript2": "^0.27.1",
+        "ts-jest": "^26.1.1",
+        "typescript": "^3.9.6"
+    },
+    "files": [
+        "dist",
+        "src"
+    ]
+}
