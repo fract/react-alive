@@ -21,10 +21,10 @@
     },
     "peerDependencies": {
         "react": "^16.0.0",
-        "@fract/core": "^0.1.2"
+        "@fract/core": "^0.2.0"
     },
     "devDependencies": {
-        "@fract/core": "^0.1.2",
+        "@fract/core": "^0.2.0",
         "@rollup/plugin-commonjs": "^13.0.0",
         "@rollup/plugin-node-resolve": "^8.1.0",
         "@types/jest": "^26.0.4",
