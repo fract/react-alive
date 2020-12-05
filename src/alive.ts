@@ -1,28 +1,33 @@
 import React from 'react'
-import { live, Fractal } from '@fract/core'
+import { Stream, watch } from '@fract/core'
 
 interface State {
-    projection: null | JSX.Element
+    jsx: null | JSX.Element
 }
 
 interface Props {
-    target: Fractal<JSX.Element>
+    target: Stream<JSX.Element>
 }
 
 export class Alive extends React.Component<Props, State> {
+    private dispose!: () => void
+
     constructor(props: Props) {
         super(props)
 
-        this.state = { projection: null }
+        this.state = { jsx: null }
+    }
 
-        const update = (projection: JSX.Element) => this.setState({ projection })
+    componentDidMount() {
+        const { target } = this.props
+        this.dispose = watch(target, (jsx) => this.setState({ jsx }))
+    }
 
-        live(async function* () {
-            while (true) yield update(yield* props.target)
-        })
+    componentWillUnmount() {
+        this.dispose()
     }
 
     render() {
-        return this.state.projection
+        return this.state.jsx
     }
 }

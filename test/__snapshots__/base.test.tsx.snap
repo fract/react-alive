@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`initial render with null 1`] = `null`;
+exports[`initial render with <div>John</div> 1`] = `
+<div>
+  John
+</div>
+`;
 
 exports[`render with <div>Barry</div> 1`] = `
 <div>
@@ -8,8 +12,8 @@ exports[`render with <div>Barry</div> 1`] = `
 </div>
 `;
 
-exports[`render with <div>John</div> 1`] = `
+exports[`render with <div>Barry</div> 2`] = `
 <div>
-  John
+  Barry
 </div>
 `;

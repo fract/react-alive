@@ -1,34 +1,42 @@
 import React from 'react'
 import Renderer from 'react-test-renderer'
-import { fractal, fraction } from '@fract/core'
+import { fractal, observable } from '@fract/core'
 import { Alive } from '../src/alive'
 
-const delay = (time: number) => new Promise((r) => setTimeout(r, time))
+const disposeMock = jest.fn()
 
-const Name = fraction('John')
+const name = observable('John')
 
-const User = fractal(async function* _User() {
-    while (true) {
-        yield <div>{yield* Name}</div>
+const user = fractal(function* () {
+    try {
+        while (true) {
+            yield <div>{yield* name}</div>
+        }
+    } finally {
+        disposeMock()
     }
 })
 
-const renderer = Renderer.create(<Alive target={User} />)
+const renderer = Renderer.create(<Alive target={user} />)
 
-it('initial render with null', async () => {
-    const json = renderer.toJSON()
-    expect(json).toMatchSnapshot()
-})
-
-it('render with <div>John</div>', async () => {
-    await delay(300)
+it('initial render with <div>John</div>', async () => {
     const json = renderer.toJSON()
     expect(json).toMatchSnapshot()
 })
 
 it('render with <div>Barry</div>', async () => {
-    Name.use('Barry')
-    await delay(300)
+    name.set('Barry')
     const json = renderer.toJSON()
     expect(json).toMatchSnapshot()
+})
+
+it('render with <div>Barry</div>', async () => {
+    name.set('Barry')
+    const json = renderer.toJSON()
+    expect(json).toMatchSnapshot()
+})
+
+it('should call disposeMock when unmount', async () => {
+    renderer.unmount()
+    expect(disposeMock).toBeCalled()
 })
