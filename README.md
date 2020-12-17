@@ -9,10 +9,10 @@ npm i @fract/react-alive
 ```tsx
 import React from 'react'
 import { render } from 'react-dom'
-import { Alive } from '@fract/react-alive'
 import { fractal } from '@fract/core'
+import { Alive } from '@fract/react-alive'
 
-const App = fractal(async function* () {
+const App = fractal(function* () {
     while (true) {
         yield <div>Hello world</div>
     }
