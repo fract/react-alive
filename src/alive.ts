@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stream, watch } from '@fract/core'
+import { Stream, whatsUp } from 'whatsup'
 
 interface State {
     jsx: null | JSX.Element
@@ -20,7 +20,7 @@ export class Alive extends React.Component<Props, State> {
 
     componentDidMount() {
         const { target } = this.props
-        this.dispose = watch(target, (jsx) => this.setState({ jsx }))
+        this.dispose = whatsUp(target, (jsx) => this.setState({ jsx }))
     }
 
     componentWillUnmount() {

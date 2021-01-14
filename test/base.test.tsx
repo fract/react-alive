@@ -1,11 +1,11 @@
 import React from 'react'
 import Renderer from 'react-test-renderer'
-import { fractal, observable } from '@fract/core'
+import { fractal, conse } from 'whatsup'
 import { Alive } from '../src/alive'
 
 const disposeMock = jest.fn()
 
-const name = observable('John')
+const name = conse('John')
 
 const user = fractal(function* () {
     try {

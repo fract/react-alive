@@ -1,7 +1,7 @@
 ## Install
 
 ```bash
-npm i @fract/react-alive
+npm i @whatsup-js/react-alive
 ```
 
 ## Usage
@@ -9,8 +9,8 @@ npm i @fract/react-alive
 ```tsx
 import React from 'react'
 import { render } from 'react-dom'
-import { fractal } from '@fract/core'
-import { Alive } from '@fract/react-alive'
+import { fractal } from 'whatsup-js'
+import { Alive } from '@whatsup-js/react-alive'
 
 const App = fractal(function* () {
     while (true) {
