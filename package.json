@@ -1,5 +1,5 @@
 {
-    "name": "@whatsup-js/react-alive",
+    "name": "@whatsup/react-alive",
     "description": "React component to live connect a Whats Up application",
     "version": "0.3.0",
     "author": "Denis Churbanov",
