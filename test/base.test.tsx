@@ -1,7 +1,7 @@
 import React from 'react'
 import Renderer from 'react-test-renderer'
 import { fractal, conse } from 'whatsup'
-import { Alive } from '../src/alive'
+import { WhatsUp } from '../src'
 
 const disposeMock = jest.fn()
 
@@ -17,7 +17,7 @@ const user = fractal(function* () {
     }
 })
 
-const renderer = Renderer.create(<Alive target={user} />)
+const renderer = Renderer.create(<WhatsUp stream={user} />)
 
 it('initial render with <div>John</div>', async () => {
     const json = renderer.toJSON()
