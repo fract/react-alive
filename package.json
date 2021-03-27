@@ -1,7 +1,7 @@
 {
     "name": "@whatsup/react",
     "description": "React component to connect a Whats Up application",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "author": "Denis Churbanov",
     "license": "MIT",
     "repository": {
